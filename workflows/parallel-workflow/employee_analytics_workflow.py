@@ -53,8 +53,14 @@ def project_evaluation(state: EmployeeState) -> dict:
     }
 
 def summary(state: EmployeeState) -> dict:
-    # Example summary logic
-    summary = f"Employee: {state['employee_name']}, Yearly Salary: {state['yearly_salary']} BDT Bonus: {state['bonus_amount']} BDT Project Status: {state['project_status']}"
+    summary = (
+        f"Employee ID: {state['employee_id']}, "
+        f"Employee: {state['employee_name']}, "
+        f"Yearly Salary: {state['yearly_salary']}, "
+        f"Bonus: {state['bonus_amount']}, "
+        f"Project Status: {state['project_status']}"
+    )
+
     return {
         'summary' : summary
     }
