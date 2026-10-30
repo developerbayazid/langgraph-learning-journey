@@ -9,41 +9,61 @@ This repository contains the code, examples, and notes I build while learning La
 - Understand LangGraph fundamentals and core concepts.
 - Build sequential, conditional, and parallel workflows.
 - Learn how to manage state and control workflow execution.
-- Explore nodes, edges, and graph-based architectures.
+- Explore nodes, edges, reducers, and graph-based architectures.
 - Integrate Large Language Models (LLMs) into workflows.
+- Understand workflow synchronization and conditional routing.
 - Progress toward building practical AI agents and applications.
 
 ## 📚 Learning Projects
 
-| Project                             | Status         |
-| ----------------------------------- | -------------- |
-| Sequential Workflow Using LangGraph | 🚧 In Progress |
-| Conditional Workflow                | 📝 Planned     |
-| Parallel Workflow                   | 📝 Planned     |
+| Project                                   | Concepts                                                                   | Status       |
+| ----------------------------------------- | -------------------------------------------------------------------------- | ------------ |
+| Sequential Workflow                       | Nodes, Edges, State, Sequential Execution                                  | ✅ Completed |
+| Parallel Workflow - Employee Analytics    | Parallel Execution, State Management, Fan-in Synchronization               | ✅ Completed |
+| Parallel Workflow - Essay Evaluator       | Structured Output, Reducers, Parallel Execution, Average Score Calculation | ✅ Completed |
+| Conditional Workflow - Content Moderation | Conditional Routing, Decision Making, Multiple Execution Paths             | ✅ Completed |
+| LLM-Based Content Moderation              | LLM Integration, Content Analysis                                          | 📝 Planned   |
+| Human-in-the-Loop Workflow                | Human Approval, Workflow Interruptions                                     | 📝 Planned   |
 
 _More projects will be added as I progress through the learning series._
 
 ## 🛠️ Tech Stack
 
 - **Language:** Python
-- **Framework:** LangGraph
+- **Workflow Framework:** LangGraph
 - **LLM Framework:** LangChain
-- **Environment:** Jupyter Notebook / Python
+- **LLM Provider:** OpenAI
+- **Data Validation:** Pydantic
+- **Environment Management:** Python Virtual Environment / uv
+- **Environment Variables:** python-dotenv
+- **Development Environment:** Jupyter Notebook / Python
 - **Version Control:** Git & GitHub
 
 ## 📁 Repository Structure
 
 ```text
 langgraph-learning-journey/
+│
 ├── README.md
+├── .gitignore
+│
 ├── sequential-workflow/
 │   ├── README.md
 │   └── main.py
+│
+├── parallel-workflow/
+│   ├── README.md
+│   ├── employee_analytics_workflow.py
+│   └── essay_evaluator.py
+│
 ├── conditional-workflow/
+│   ├── README.md
+│   └── content_moderation.py
+│
 └── ...
 ```
 
-The structure will evolve as new projects are added.
+_The repository structure will evolve as new projects and concepts are added._
 
 ## ⚙️ Getting Started
 
@@ -51,12 +71,15 @@ The structure will evolve as new projects are added.
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/langgraph-learning-journey.git
+
 cd langgraph-learning-journey
 ```
 
 Replace `YOUR_USERNAME` with your GitHub username.
 
 ### 2. Create a virtual environment
+
+Using Python:
 
 ```bash
 python -m venv .venv
@@ -68,21 +91,23 @@ Activate it on Windows:
 .venv\Scripts\activate
 ```
 
-### 3. Install dependencies
-
-Install the packages required for your project. For example:
+Alternatively, use `uv` to manage the environment:
 
 ```bash
-pip install langgraph langchain python-dotenv
+uv sync
 ```
 
-Some projects may require additional packages or an LLM provider's integration package.
+### 3. Install dependencies
+
+Install the required packages:
+
+```bash
+pip install langgraph langchain langchain-openai python-dotenv pydantic
+```
 
 ### 4. Configure environment variables
 
-Create a `.env` file in the relevant project directory if API credentials are required.
-
-Example:
+Create a `.env` file in the project root or the relevant project directory.
 
 ```env
 OPENAI_API_KEY=your_api_key_here
@@ -92,44 +117,60 @@ Never commit your actual API keys or secrets to GitHub.
 
 ### 5. Run a project
 
-Navigate to the relevant project directory and follow its individual README instructions.
+Navigate to the relevant project directory.
 
 For example:
 
 ```bash
-cd sequential-workflow
-python main.py
+cd parallel-workflow
+
+python employee_analytics_workflow.py
 ```
 
-Adjust the entry-point filename to match your actual project.
+Or run using `uv`:
+
+```bash
+uv run parallel-workflow/employee_analytics_workflow.py
+```
+
+Adjust the entry-point filename according to the project you want to execute.
 
 ## 🧠 Key Concepts
 
-Topics I aim to explore throughout this journey:
+Topics explored and planned throughout this learning journey:
 
-- Graph-based workflow architecture
-- State management
-- Nodes and edges
-- Sequential execution
-- Conditional routing
-- Parallel execution
-- LLM integration
-- Tool calling
-- Memory and persistence
-- Human-in-the-loop workflows
-- AI agent design
+- Graph-based Workflow Architecture
+- State Management with TypedDict
+- Nodes and Edges
+- Sequential Execution
+- Conditional Routing
+- Parallel Execution
+- Fan-in Synchronization
+- Reducers and State Updates
+- Structured Output with Pydantic
+- LLM Integration
+- Tool Calling
+- Memory and Persistence
+- Checkpointing
+- Human-in-the-Loop Workflows
+- AI Agent Development
 
 ## 📈 Progress Tracking
 
-I will update this repository as I complete new lessons, implement workflows, and experiment with new concepts.
+I will continuously update this repository as I complete new lessons, implement workflows, and experiment with new concepts.
 
-Each project may include source code, a project-specific README, workflow diagrams, and example outputs.
+Each project may include:
+
+- Source code and implementation examples
+- Project-specific README files
+- Workflow architecture diagrams
+- Example inputs and outputs
+- Notes explaining important concepts
 
 ## 📖 Learning Resources
 
 - [LangGraph Documentation](https://docs.langchain.com/oss/python/langgraph/overview)
 - [LangChain Documentation](https://docs.langchain.com/oss/python/langchain/overview)
-- [YouTube Learning Series](https://www.youtube.com/playlist?list=PLkz_y24mlSJZ9SFlc9O4Q4Grli5SQDbrB)
 
 ## 🤝 Contributions
 
@@ -137,7 +178,7 @@ This repository is primarily a personal learning project. Suggestions, feedback,
 
 ## 📄 License
 
-This project is available for educational purposes. A license will be added if and when appropriate.
+This project is currently intended for educational and learning purposes. A license may be added in the future.
 
 ---
 
