@@ -47,21 +47,27 @@ langgraph-learning-journey/
 ├── README.md
 ├── .gitignore
 │
-├── sequential-workflow/
-│   ├── README.md
-│   └── main.py
-│
-├── parallel-workflow/
-│   ├── README.md
-│   ├── employee_analytics_workflow.py
-│   └── essay_evaluator.py
-│
-├── conditional-workflow/
-│   ├── README.md
-│   └── content_moderation.py
-│
-└── ...
+└── workflows/
+    │
+    ├── sequential-workflow/
+    │   ├── README.md
+    │   └── main.py
+    │
+    ├── parallel-workflow/
+    │   ├── README.md
+    │   ├── employee_analytics_workflow.py
+    │   └── essay_evaluator.py
+    │
+    ├── conditional-workflow/
+    │   ├── README.md
+    │   └── content_moderation_workflow.py
+    │
+    └── ...
 ```
+
+_The `workflows/` directory contains all practical workflow implementations. Its structure will evolve as new projects and concepts are added._
+
+````
 
 _The repository structure will evolve as new projects and concepts are added._
 
@@ -73,7 +79,7 @@ _The repository structure will evolve as new projects and concepts are added._
 git clone https://github.com/YOUR_USERNAME/langgraph-learning-journey.git
 
 cd langgraph-learning-journey
-```
+````
 
 Replace `YOUR_USERNAME` with your GitHub username.
 
