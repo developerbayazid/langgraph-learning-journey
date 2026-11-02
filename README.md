@@ -2,17 +2,18 @@
 
 A hands-on learning journey to understand and build AI workflows and agents using **LangChain** and **LangGraph**.
 
-This repository contains practical implementations of different workflow architectures, from basic sequential execution to parallel processing and conditional routing.
+This repository contains practical implementations of different workflow architectures, from basic sequential execution to parallel processing, conditional routing, and iterative workflows.
 
 ## 🎯 Learning Goals
 
 - Understand LangGraph fundamentals and graph-based architecture.
 - Learn how nodes, edges, state, and reducers work.
-- Build sequential, parallel, and conditional workflows.
+- Build sequential, parallel, conditional, and iterative workflows.
 - Work with LLMs using LangChain.
 - Implement structured outputs using Pydantic.
 - Understand state management and workflow execution.
-- Gradually explore advanced LangGraph concepts and AI agents.
+- Explore feedback loops and iterative improvement.
+- Gradually explore advanced concepts and AI agents.
 
 ## 🛠️ Tech Stack
 
@@ -49,6 +50,10 @@ langgraph-learning-journey/
     │   ├── content_moderation_workflow.py
     │   └── customer_review_analysis.py
     │
+    ├── iterative-workflow/
+    │   ├── README.md
+    │   └── iterative_workflow.py
+    │
     └── ...
 ```
 
@@ -77,7 +82,6 @@ START
   |      Calculate Bonus
   |
   └── Project Evaluation
-              |
               |
        Summary Generation
               |
@@ -193,12 +197,59 @@ An AI-powered customer review analysis system that detects sentiment and generat
 
 \</details>
 
+### 4. Iterative Workflow
+
+\<details>
+\<summary>\<strong>Iterative Essay Improver — Completed\</strong>\</summary>
+
+An AI-powered essay improvement system that generates, evaluates, and improves content through an iterative feedback loop.
+
+**Workflow behavior:**
+
+- Generate an initial essay based on a given topic.
+- Evaluate the essay using an LLM with structured output.
+- Check whether the essay meets the required quality score.
+- If the score is insufficient, regenerate and improve the essay using the evaluation feedback.
+- Repeat the process until the quality requirement is achieved or the maximum iteration limit is reached.
+
+**Concepts learned:**
+
+- Iterative execution
+- Feedback loops
+- Conditional edges and cyclic graph architecture
+- LLM-based evaluation
+- Structured output with Pydantic
+- State updates across iterations
+- Quality-based routing
+- Maximum iteration limits
+- Recursion limits
+
+**Workflow:**
+
+```text
+             START
+               |
+        Generate Essay
+               |
+        Evaluate Essay
+               |
+        Check Quality
+          /       \
+      Improve     Done
+         |          |
+         |         END
+         |
+         └──────> Generate Essay
+```
+
+\</details>
+
 ## 🚧 Upcoming Topics
 
 - [x] LLM-Based Content Moderation
 - [ ] Human-in-the-Loop Workflow
 - [ ] Tool Calling and Tool Integration
-- [ ] State Management and Reducers
+- [x] State Management and Reducers
 - [ ] Checkpointing and Persistence
 - [ ] Memory Management
 - [ ] Multi-Agent Systems
@@ -274,11 +325,16 @@ python workflows/conditional-workflow/content_moderation_workflow.py
 python workflows/conditional-workflow/customer_review_analysis.py
 ```
 
+### Iterative Workflow
+
+```bash
+python workflows/iterative-workflow/iterative_workflow.py
+```
+
 ## 📖 Learning Resources
 
 - [LangGraph Documentation](https://docs.langchain.com/oss/python/langgraph/overview)
 - [LangChain Documentation](https://docs.langchain.com/oss/python/langchain/overview)
-- [LangGraph Learning Playlist](https://www.youtube.com/playlist?list=PLkz_y24mlSJZ9SFlc9O4Q4Grli5SQDbrB)
 
 ## 💡 My Learning Approach
 
