@@ -104,7 +104,7 @@ workflow = graph.compile()
 
 
 initial_state = {
-    'review' : "The app is crashing frequently when I am trying to do checkout."
+    'review' : "Inventory management software is awesome."
 }
 
 result = workflow.invoke(initial_state)
